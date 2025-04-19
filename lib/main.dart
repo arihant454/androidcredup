@@ -27,6 +27,9 @@ class CredUpApp extends StatelessWidget {
   }
 }
 
+
+
+
 class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -38,7 +41,7 @@ class LoginScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset('assets/logo_with_name.jpg'),
+                Image.asset('assets/logo.png'),
                 SizedBox(height: 10),
                 Text(
                   'CredUp!',
