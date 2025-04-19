@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:androidcredup/debit_account_screen.dart'; // Adjust path if needed
+import 'package:androidcredup/main_dashboard.dart';
 
 
 void main() => runApp(CredUpApp());
@@ -87,7 +88,7 @@ class LoginScreen extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => DebitAccountScreen()),
+                        MaterialPageRoute(builder: (context) => MainDashboard(initialIndex: 3)),
                       );
                     },
                     child: Text('Get started', style: TextStyle(fontSize: 16)),

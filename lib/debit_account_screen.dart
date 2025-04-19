@@ -144,30 +144,7 @@ class DebitAccountScreen extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.black,
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.white60,
-        type: BottomNavigationBarType.fixed,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home_outlined),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.add_circle_outline),
-            label: 'Add',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.account_balance_wallet_outlined),
-            label: 'Budgets',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_bag_outlined),
-            label: 'Spending',
-          ),
-        ],
-      ),
+      
     );
   }
 }
