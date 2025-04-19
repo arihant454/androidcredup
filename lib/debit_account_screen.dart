@@ -17,7 +17,7 @@ class DebitAccountScreen extends StatelessWidget {
       'icon': '🏠',
     },
   ];
-
+  DebitAccountScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
