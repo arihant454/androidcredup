@@ -1,133 +1,107 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(const MyApp());
+void main() => runApp(CredUpApp());
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
+class CredUpApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Meddu Education',
+      title: 'CredUp',
       theme: ThemeData.dark().copyWith(
-        scaffoldBackgroundColor: const Color(0xFF121212),
+        scaffoldBackgroundColor: Color(0xFF121212),
+        primaryColor: Colors.blueAccent,
         inputDecorationTheme: InputDecorationTheme(
           filled: true,
-          fillColor: const Color(0xFF1E1E1E),
+          fillColor: Color(0xFF2C2C2C),
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(30),
             borderSide: BorderSide.none,
           ),
-          hintStyle: const TextStyle(color: Colors.grey),
-          labelStyle: const TextStyle(color: Colors.white),
-        ),
-        textTheme: const TextTheme(
-          bodyMedium: TextStyle(color: Colors.white),
+          hintStyle: TextStyle(color: Colors.white70),
         ),
       ),
-      home: const RegisterScreen(),
+      home: LoginScreen(),
     );
   }
 }
 
-class RegisterScreen extends StatelessWidget {
-  const RegisterScreen({super.key});
-
+class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 32.0),
         child: Center(
           child: SingleChildScrollView(
-            padding: const EdgeInsets.symmetric(horizontal: 30),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text(
-                  "Cred Up",
-                  textAlign: TextAlign.center,
+                Image.asset('assets/logo_with_name.jpg'),
+                SizedBox(height: 10),
+                Text(
+                  'CredUp!',
                   style: TextStyle(
-                    color: Colors.lightBlueAccent,
-                    fontSize: 28,
+                    fontSize: 32,
                     fontWeight: FontWeight.bold,
-                  ),
-                ),
-                const SizedBox(height: 30),
-                const Text(
-                  "REGISTER",
-                  style: TextStyle(
-                    fontSize: 22,
-                    fontWeight: FontWeight.w600,
                     color: Colors.white,
                   ),
                 ),
-                const SizedBox(height: 20),
-                const TextField(
-                  decoration: InputDecoration(
-                    labelText: 'Name',
-                    hintText: 'John Doe',
-                  ),
+                SizedBox(height: 8),
+                Text(
+                  'Join CredUp for free',
+                  style: TextStyle(color: Colors.white70, fontSize: 16),
                 ),
-                const SizedBox(height: 15),
-                const TextField(
-                  keyboardType: TextInputType.phone,
+                SizedBox(height: 40),
+                TextFormField(
                   decoration: InputDecoration(
-                    labelText: 'Mobile number',
-                    hintText: '8129****',
+                    hintText: 'Email@email.com',
+                    prefixIcon: Icon(Icons.email, color: Colors.white),
                   ),
+                  style: TextStyle(color: Colors.white),
                 ),
-                const SizedBox(height: 15),
-                const TextField(
-                  keyboardType: TextInputType.emailAddress,
-                  decoration: InputDecoration(
-                    labelText: 'Email',
-                    hintText: 'example@email.com',
-                  ),
-                ),
-                const SizedBox(height: 15),
-                const TextField(
+                SizedBox(height: 20),
+                TextFormField(
                   obscureText: true,
                   decoration: InputDecoration(
-                    labelText: 'Password',
-                    hintText: '********',
-                    suffixIcon: Icon(Icons.visibility_off, color: Colors.grey),
+                    hintText: 'Enter your password',
+                    prefixIcon: Icon(Icons.lock, color: Colors.white),
                   ),
+                  style: TextStyle(color: Colors.white),
                 ),
-                const SizedBox(height: 25),
+                SizedBox(height: 30),
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                    onPressed: () {},
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.lightBlueAccent,
+                      backgroundColor: Colors.redAccent,
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
+                        borderRadius: BorderRadius.circular(30),
                       ),
-                      padding: const EdgeInsets.symmetric(vertical: 15),
+                      padding: EdgeInsets.symmetric(vertical: 14),
                     ),
-                    child: const Text(
-                      'SIGNUP',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.white,
-                        letterSpacing: 1,
-                      ),
-                    ),
+                    onPressed: () {
+                      // Navigator.push(
+                      //   context,
+                      //   MaterialPageRoute(builder: (context) => DebitAccountScreen()),
+                      // );
+                    },
+                    child: Text('Get started', style: TextStyle(fontSize: 16)),
                   ),
                 ),
-                const SizedBox(height: 15),
-                GestureDetector(
-                  onTap: () {
-                    // Navigate to login page
-                  },
-                  child: const Text(
-                    "Already have an account? Sign in",
-                    style: TextStyle(
-                      color: Colors.grey,
-                      decoration: TextDecoration.underline,
+                SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('New to CredUp?', style: TextStyle(color: Colors.white70)),
+                    SizedBox(width: 5),
+                    GestureDetector(
+                      onTap: () {
+                        // Navigate to Signup screen
+                      },
+                      child: Text('Signup', style: TextStyle(color: Colors.white)),
                     ),
-                  ),
-                )
+                  ],
+                ),
               ],
             ),
           ),
