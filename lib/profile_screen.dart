@@ -29,7 +29,7 @@ class ProfileTab extends StatelessWidget {
                 children: [
                   CircleAvatar(
                     radius: 35,
-                    backgroundImage: AssetImage('assets/profile_pic.jpg'), // Replace with actual image
+                    backgroundImage: AssetImage('assets/profile_photo.jpg'), // Replace with actual image
                   ),
                   const SizedBox(width: 16),
                   Expanded(
@@ -37,7 +37,7 @@ class ProfileTab extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: const [
                         Text(
-                          'Your Credit Score',
+                          'Your Name',
                           style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
                         ),
                         SizedBox(height: 4),
@@ -91,7 +91,7 @@ class ProfileTab extends StatelessWidget {
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                       ),
                       onPressed: () {},
-                      child: const Text("Invite Friends"),
+                      child: const Text("Share Tips"),
                     ),
                   ],
                 ),

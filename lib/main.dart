@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// import 'package:androidcredup/debit_account_screen.dart'; // Adjust path if needed
+// import 'package:androidcredup/profile_screen.dart'; // Adjust path if needed
 import 'package:androidcredup/main_dashboard.dart';
 
 

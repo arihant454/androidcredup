@@ -1,150 +1,132 @@
 import 'package:flutter/material.dart';
 
-class DebitAccountScreen extends StatelessWidget {
-  final List<Map<String, String>> transactions = [
-    {
-      'title': 'Food Delivery',
-      'category': 'Food & Drinks',
-      'amount': '-₹12,50',
-      'date': 'March 7',
-      'icon': '🍔',
-    },
-    {
-      'title': 'Rent payment',
-      'category': '',
-      'amount': '-₹11,000',
-      'date': '',
-      'icon': '🏠',
-    },
-  ];
-  DebitAccountScreen({super.key});
+class HomeTab extends StatelessWidget {
+  const HomeTab({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        elevation: 0,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () => Navigator.pop(context),
-        ),
-        centerTitle: true,
-        title: Text(
-          'Debit Account',
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-        ),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.settings, color: Colors.white),
-            onPressed: () {},
-          ),
-        ],
-      ),
-      body: Column(
-        children: [
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
-                Text('DEBIT ACCOUNT',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 14)),
-                Text('Rev Bank /••••14',
-                    style: TextStyle(color: Colors.white70, fontSize: 14)),
-              ],
+      body: SafeArea(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Header
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text("Debit Account",
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white)),
+                  Icon(Icons.settings, color: Colors.white),
+                ],
+              ),
             ),
-          ),
-          const SizedBox(height: 20),
-          Text(
-            '₹4.000',
-            style: TextStyle(
-                fontSize: 36, fontWeight: FontWeight.bold, color: Colors.white),
-          ),
-          const SizedBox(height: 20),
-          SliderTheme(
-            data: SliderThemeData(
-              thumbColor: Colors.white,
-              activeTrackColor: Colors.white,
-              inactiveTrackColor: Colors.white30,
-            ),
-            child: Slider(
-              value: 0.5,
-              onChanged: (v) {},
-            ),
-          ),
-          const SizedBox(height: 10),
-          Expanded(
-            child: Container(
+            // Credit Score Card
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
-                color: Color(0xFF1F1F1F),
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(25),
-                  topRight: Radius.circular(25),
-                ),
+                color: Colors.grey.shade900,
+                borderRadius: BorderRadius.circular(16),
               ),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
-                        Text('RECENT TRANSACTIONS',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white70)),
-                        Text('VIEW ALL >',
-                            style: TextStyle(color: Colors.white70)),
-                      ],
-                    ),
-                    const SizedBox(height: 10),
-                    Expanded(
-                      child: ListView.builder(
-                        itemCount: transactions.length,
-                        itemBuilder: (context, index) {
-                          final tx = transactions[index];
-                          return ListTile(
-                            leading: CircleAvatar(
-                              radius: 22,
-                              backgroundColor: Colors.redAccent,
-                              child: Text(
-                                tx['icon']!,
-                                style: TextStyle(fontSize: 18),
-                              ),
-                            ),
-                            title: Text(tx['title']!,
-                                style: TextStyle(color: Colors.white)),
-                            subtitle: Text(tx['category']!,
-                                style: TextStyle(color: Colors.white38)),
-                            trailing: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [
-                                Text(tx['amount']!,
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold)),
-                                Text(tx['date']!,
-                                    style: TextStyle(
-                                        color: Colors.white38, fontSize: 12)),
-                              ],
-                            ),
-                          );
-                        },
-                      ),
-                    ),
-                  ],
-                ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: const [
+                      Text("CIBIL",
+                          style: TextStyle(color: Colors.white60)),
+                      Text("HDFC Bank /••••14",
+                          style: TextStyle(color: Colors.white60)),
+                    ],
+                  ),
+                  const SizedBox(height: 10),
+                  const Center(
+                    child: Text("839",
+                        style: TextStyle(
+                            fontSize: 40,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white)),
+                  ),
+                  const Center(
+                      child: Text("CREDIT SCORE",
+                          style: TextStyle(color: Colors.white54))),
+                  const SizedBox(height: 20),
+
+                ],
               ),
             ),
-          ),
-        ],
+            const SizedBox(height: 20),
+            // Recent Transactions
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Text("RECENT TRANSACTIONS",
+                      style: TextStyle(
+                          color: Colors.white70, fontWeight: FontWeight.bold)),
+                  Text("VIEW ALL", style: TextStyle(color: Colors.white)),
+                ],
+              ),
+            ),
+            const SizedBox(height: 10),
+            Expanded(
+              child: ListView(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                children: const [
+                  TransactionTile("OTT Subscription", "Entertainment", "₹-12,50", "March 7"),
+                  TransactionTile("Rent payment", "Home", "₹-11,000", "March 1"),
+                  TransactionTile("Internet Bill", "Home", "₹-4800", "Feb 20"),
+                  TransactionTile("Water Bill", "Utility", "₹-1750", "Feb 11"),
+                  TransactionTile("Electricity Bill", "Utility", "₹-3450", "Feb 11"),
+                  TransactionTile("Transportation", "Utility", "₹-950", "Feb 2"),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
-      
+    );
+  }
+}
+
+class TransactionTile extends StatelessWidget {
+  final String title, subtitle, amount, date;
+
+  const TransactionTile(this.title, this.subtitle, this.amount, this.date, {super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      color: Colors.grey.shade900,
+      margin: const EdgeInsets.only(bottom: 12),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      child: ListTile(
+        leading: CircleAvatar(
+          backgroundColor: Colors.red,
+          child: Icon(Icons.account_balance_wallet, color: Colors.white),
+        ),
+        title: Text(title, style: TextStyle(color: Colors.white)),
+        subtitle: Text(subtitle, style: TextStyle(color: Colors.white60)),
+        trailing: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            Text(amount,
+                style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold)),
+            Text(date, style: TextStyle(color: Colors.white54, fontSize: 12)),
+          ],
+        ),
+      ),
     );
   }
 }

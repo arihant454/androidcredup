@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'profile_screen.dart';
 import 'debit_account_screen.dart';
-import 'profile_tab.dart';
 
 class MainDashboard extends StatefulWidget {
   final int initialIndex;
@@ -15,10 +15,10 @@ class _MainDashboardState extends State<MainDashboard> {
 
   final List<Widget> _screens = [
     // Replace these placeholders with your actual tab widgets
-    ProfileTab(), // your profile tab
+    HomeTab(), // your profile tab
     Center(child: Text('Add Screen', style: TextStyle(color: Colors.white))),
     Center(child: Text('Budgets Screen', style: TextStyle(color: Colors.white))),
-    DebitAccountScreen(), // Your debit account screen
+    ProfileTab(), // Your debit account screen
   ];
 
   @override
