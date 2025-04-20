@@ -1,4 +1,4 @@
-
+(App is in the apk folder)
 # Cred Up 📈
 
 **Cred Up** is a mobile app designed to help students and young individuals **build and improve their credit scores** using **alternative data** like rent payments, utility bills, and other non-traditional financial activities.
